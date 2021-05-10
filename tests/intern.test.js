@@ -1,19 +1,34 @@
-const Intern = require('./lib/Intern');
-const Employee = require('./lib/Employee');
-const { TestScheduler } = require('jest');
+// using Manager constructor 
+const Intern = require('../lib/Intern');
 
-test('Can set school using constructor arg', () => {
-    const testValue = 1000;
-    const e = new Intern('Foo', 1, 'test@email.com', testValue);
-    expect(e.office).toBe(testValue);
-});
-test('getRole() should return \'Intern\'', () => {
-    const testValue = 'Intern';
-    const e = new Intern('Foo', 1, 'test@email.com', 100);
-    expect(e.getRole()).toBe(testValue);
-});
-test('Can set school using getSchool()', () => {
-    const testValue = UofU;
-    const e = new Intern('Foo', 1, 'test@email.com', testValue);
-    expect(e.getSchool()).toBe(testValue);
-});
+describe("intern", () => {
+    describe("school", () => {
+        it("should return new intern office number", () => {
+            let school = "uofu";
+            let newEmp = new Intern("", "", "", school);
+            expect(newEmp.school).toBe("uofu");
+        })
+    })
+    describe("name", () => {
+        it("should return new intern name", () => {
+            let name = "foo";
+            let newEmp = new Intern(name);
+            expect(newEmp.name).toBe("foo");
+        })
+    })
+    describe("id", () => {
+        it("should return new intern id", () => {
+            let id = "10";
+            let newEmp = new Intern("", id);
+            expect(newEmp.id).toBe("10");
+        })
+    })
+    describe("email", () => {
+        it("should return new intern email", () => {
+            let email = "foo@email.com";
+            let newEmp = new Intern("", "", email);
+            expect(newEmp.email).toBe("foo@email.com");
+        })
+    })
+})
+
