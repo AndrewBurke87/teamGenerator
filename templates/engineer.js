@@ -9,7 +9,7 @@ const EngineerTemplate = (data) => `<div class="card employee-card">
       <li class="list-group-item">
         Email: <a href="mailto:{{email}}">${data.email}</a>
       </li>
-      <li class="list-group-item">Github username: ${data.github}</li>
+      <li class="list-group-item">Github username:<a href=https://github.com/${data.github} target="_blank">${data.github}</a></li>
     </ul>
   </div>
   </div>`
