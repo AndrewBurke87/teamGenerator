@@ -42,8 +42,6 @@ const questions = () => {
 
 
     ]).then(({ name, email, id, role }) => {
-        console.log(name);
-        console.log(email);
         if (role === "Manager") {
             return inquirer
                 .prompt([{
@@ -116,7 +114,6 @@ const questions = () => {
 };
 
 generateHTML = (answers) => {
-    console.log("hello", answers)
     const employeeCards = answers.join(',');
     const generateTeam = MainTemplate(employeeCards)
 
